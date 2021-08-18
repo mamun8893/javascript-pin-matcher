@@ -34,3 +34,20 @@ document.getElementById('key-pad').addEventListener('click', function(event) {
     }
 
 })
+
+//Match Pin
+
+document.getElementById('match-button').addEventListener('click', function() {
+    const pin = document.getElementById('pin-input').value;
+    const typePin = document.getElementById('typed-number').value;
+    const failMessage = document.getElementById('fail-message');
+    const successMessage = document.getElementById('success-message');
+    if (pin == typePin) {
+        successMessage.style.display = "block";
+        failMessage.style.display = "none";
+    } else {
+        failMessage.style.display = "block";
+        successMessage.style.display = "none";
+
+    }
+})
