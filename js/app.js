@@ -42,12 +42,19 @@ document.getElementById('match-button').addEventListener('click', function() {
     const typePin = document.getElementById('typed-number').value;
     const failMessage = document.getElementById('fail-message');
     const successMessage = document.getElementById('success-message');
-    if (pin == typePin) {
-        successMessage.style.display = "block";
-        failMessage.style.display = "none";
+    const pinMessage = document.getElementById('pin-message');
+    if (pin == "") {
+        pinMessage.style.display = "block";
     } else {
-        failMessage.style.display = "block";
-        successMessage.style.display = "none";
-
+        if (pin == typePin) {
+            successMessage.style.display = "block";
+            failMessage.style.display = "none";
+            pinMessage.style.display = "none";
+        } else {
+            failMessage.style.display = "block";
+            successMessage.style.display = "none";
+            pinMessage.style.display = "none";
+        }
     }
+
 })
